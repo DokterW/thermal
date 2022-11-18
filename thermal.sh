@@ -16,21 +16,21 @@ if [[ "$THROPT" = "all" ]]; then
     if [[ "$THRARG" = "loop" ]]; then
         while :; do
             clear
-            echo "THRTMP"
+            echo "$THRTMP"
             sleep 10s
         done
     else
-        echo "THRTMP"
+        echo "$THRTMP"
     fi
 elif [[ "$THROPT" = "cpu" ]]; then
     if [[ "$THRARG" = "loop" ]]; then
         while :; do
             clear
-            echo "THRTMP" | grep x86_pkg_temp
+            echo "$THRTMP" | grep x86_pkg_temp
             sleep 10s
         done
     else
-        echo "THRTMP" | grep x86_pkg_temp
+        echo "$THRTMP" | grep x86_pkg_temp
     fi
 else
     echo "$THRNAM v$THRVER"
