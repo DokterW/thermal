@@ -1,7 +1,7 @@
 #!/bin/bash
 # thermal
 # Made by Dr. Waldijk
-# A script to show CPU, etc temperatures
+# A script to show CPU, etc temperatures.
 # Read the README.md for more info
 # By running this script you agree to the license terms.
 # Config ----------------------------------------------------------------------------
@@ -10,6 +10,7 @@ THRVER="0.1"
 THROPT=$1
 THRARG=$2
 THRTMP=$(paste <(cat /sys/class/thermal/thermal_zone*/type) <(cat /sys/class/thermal/thermal_zone*/temp) | column -s $'\t' -t | sed 's/\(.\)..$/.\1°C/')
+# source: https://www.baeldung.com/linux/cpu-temperature
 # -----------------------------------------------------------------------------------
 if [[ "$THROPT" = "all" ]]; then
     if [[ "$THRARG" = "loop" ]]; then
