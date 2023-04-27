@@ -6,7 +6,7 @@
 # By running this script you agree to the license terms.
 # Config ----------------------------------------------------------------------------
 THRNAM="thermal"
-THRVER="0.1"
+THRVER="0.2"
 THROPT=$1
 THRARG=$2
 THRTMP=$(paste <(cat /sys/class/thermal/thermal_zone*/type) <(cat /sys/class/thermal/thermal_zone*/temp) | column -s $'\t' -t | sed 's/\(.\)..$/.\1°C/')
@@ -35,5 +35,5 @@ elif [[ "$THROPT" = "cpu" ]]; then
 else
     echo "$THRNAM v$THRVER"
     echo ""
-    echo "Yeah nah..."
+    echo "thermal <all|cpu> <loop>"
 fi
